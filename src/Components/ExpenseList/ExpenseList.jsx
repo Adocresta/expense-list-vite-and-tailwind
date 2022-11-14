@@ -3,10 +3,21 @@ import ExpenseFilter from "./ExpenseFilter";
 import { ExpenseItem } from "./ExpenseItem";
 
 const ExpenseList = (props) => {
+  // rendering the list
+  const expenseListJsx = [];
+  for (let index = 0; index < props.expenses.length; index++) {
+    expenseListJsx.push(
+      <ExpenseItem
+        key={props.expenses[index].id}
+        expense={props.expenses[index]}
+      />
+    );
+  }
+
   return (
     <div className="mx-auto">
       <ExpenseFilter />
-      <ExpenseItem expense={props.expenses[1]} />
+      {expenseListJsx}
     </div>
   );
 };
