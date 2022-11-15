@@ -30,9 +30,16 @@ function App() {
       date: new Date(2022, 5, 12),
     },
   ]);
+
+  const newExpenseHandler = (newExpense) => {
+    setExpenses((prevState) => {
+      return [newExpense, ...prevState];
+    });
+  };
+
   return (
     <div className="flex flex-col h-screen">
-      <ExpenseForm />
+      <ExpenseForm onAddNewExpense={newExpenseHandler} />
       <ExpenseList expenses={expenses} />
     </div>
   );

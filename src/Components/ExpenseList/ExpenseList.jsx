@@ -17,7 +17,7 @@ const ExpenseList = (props) => {
   return (
     <div className="mx-auto">
       <ExpenseFilter />
-      {expenseListJsx}
+      <ul>{expenseListJsx}</ul>
     </div>
   );
 };
